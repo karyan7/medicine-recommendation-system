@@ -89,10 +89,6 @@
         <!-- Display the transcribed text here -->
         <div name="mysysms" id="transcription"></div>
 
-        {% if message %}
-        <p>{{ message }}</p>
-        {% endif %}
-        <br>
 
         <button type="submit" class="btn btn-danger btn-lg" style="width: 100%; padding: 14px; margin-bottom: 5px;">Predict</button>
     </form>
@@ -105,7 +101,7 @@
 
 
 
-{% if predicted_disease %}
+
 
 <!-- Results -->
 <h1 class="text-center my-4 mt-4">Our AI System Results</h1>
@@ -122,7 +118,7 @@
     </div>
 </div>
 
-{% endif %}
+
 
 <!-- Disease Modal -->
     <div class="modal fade" id="diseaseModal" tabindex="-1" aria-labelledby="diseaseModalLabel" aria-hidden="true">
