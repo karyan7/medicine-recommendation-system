@@ -15,7 +15,7 @@ precautions = pd.read_csv("precautions_df.csv")
 workout = pd.read_csv("workout_df.csv")
 description = pd.read_csv("description.csv")
 medications = pd.read_csv('medications.csv')
-diets = pd.read_csv("datasets/diets.csv")
+diets = pd.read_csv("diets.csv")
 
 
 # load model===========================================
