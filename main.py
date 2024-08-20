@@ -64,16 +64,28 @@ def index():
     return render_template("index.html")
 
 # Define a route for the home page
-@app.route('/predict', methods=['GET', 'POST'])
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+@app.route('/', methods=['GET', 'POST'])
 def home():
     if request.method == 'POST':
         symptoms = request.form.get('symptoms')
-        # mysysms = request.form.get('mysysms')
-        # print(mysysms)
         print(symptoms)
-        if symptoms =="Symptoms":
+        
+        if not symptoms or symptoms.lower() == "symptoms":
             message = "Please either write symptoms or you have written misspelled symptoms"
             return render_template('index.html', message=message)
+        else:
+            # You can add further logic here if needed
+            return render_template('index.html', message=f"Symptoms received: {symptoms}")
+
+    return render_template('index.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+
         else:
 
             # Split the user's input into a list of symptoms (assuming they are comma-separated)
